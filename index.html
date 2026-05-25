@@ -12,7 +12,8 @@
 <meta name="theme-color" content="#2563eb"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
 :root {
   --blue-900: #0f172a;
   --blue-800: #1e3a5f;
@@ -41,6 +42,20 @@
   --nav-h: 64px;
   --font: 'Plus Jakarta Sans', sans-serif;
   --mono: 'DM Mono', monospace;
+  --navy:   #0a1628;
+  --navy2:  #0d1f3c;
+  --steel:  #1a3a5c;
+  --ocean:  #0e4d7a;
+  --gold:   #f5a623;
+  --gold2:  #ffd166;
+  --cyan:   #00c8e0;
+  --green:  #00e676;
+  --red:    #ff4444;
+  --text:   #c8dff5;
+  --text2:  #8aa8cc;
+  --card:   rgba(13,31,60,0.9);
+  --border: rgba(245,166,35,0.2);
+  --border2:rgba(0,200,224,0.15
 }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -381,6 +396,101 @@ input[readonly] { background: var(--gray-50); color: var(--gray-500); }
 @media (max-width:360px) {
   .home-grid { grid-template-columns:1fr; }
 }
+    *{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--navy);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -5%,rgba(245,166,35,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 30% at 95% 90%,rgba(0,200,224,0.07) 0%,transparent 50%),
+    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,166,35,0.03) 40px),
+    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(245,166,35,0.03) 40px);
+  pointer-events:none;
+}
+.header{
+  position:relative;z-index:1;
+  background:linear-gradient(135deg,rgba(10,22,40,0.98) 0%,rgba(20,50,20,0.25) 100%);
+  border-bottom:2px solid var(--gold);
+  padding:16px 22px;
+  display:flex;align-items:center;gap:14px;
+  box-shadow:0 4px 32px rgba(245,166,35,0.15);
+}
+.header-icon{font-size:2rem;filter:drop-shadow(0 0 12px var(--gold));}
+.header h1{font-family:'Rajdhani';font-size:1.45rem;font-weight:700;color:var(--gold2);letter-spacing:2px;text-shadow:0 0 18px rgba(255,209,102,0.35);}
+.header-sub{font-size:.78rem;color:var(--text2);font-family:'Share Tech Mono';margin-top:2px;}
+.container{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:22px 14px 80px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px;backdrop-filter:blur(8px);box-shadow:0 4px 28px rgba(0,0,0,0.3),inset 0 1px 0 rgba(245,166,35,0.05);}
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+.sec-title{font-family:'Rajdhani';font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:.75rem;color:var(--text2);font-family:'Share Tech Mono';letter-spacing:.5px;margin-bottom:6px;}
+.field-input{width:100%;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.25);color:var(--text);font-family:'Barlow';font-size:.9rem;padding:8px 13px;border-radius:7px;outline:none;}
+.field-input:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(245,166,35,0.15);}
+.field-input[readonly]{background:rgba(0,200,224,0.05);border-color:var(--border2);color:var(--cyan);cursor:default;}
+.btn-group{display:flex;flex-wrap:wrap;gap:6px;}
+.tog-btn{border:1px solid rgba(245,166,35,0.3);background:rgba(245,166,35,0.05);color:var(--text2);font-family:'Rajdhani';font-size:.82rem;font-weight:600;padding:5px 12px;border-radius:6px;cursor:pointer;transition:all .15s;letter-spacing:.5px;}
+.tog-btn:hover{border-color:var(--gold);color:var(--gold);}
+.tog-btn.active{background:var(--gold);color:#0a1628;border-color:var(--gold);}
+.waktu-btn{border:1px solid rgba(0,200,224,0.3);background:rgba(0,200,224,0.05);color:var(--text2);font-family:'Rajdhani';font-size:.88rem;font-weight:700;padding:6px 20px;border-radius:6px;cursor:pointer;transition:all .15s;letter-spacing:1px;}
+.waktu-btn.active{background:var(--cyan);color:#0a1628;border-color:var(--cyan);}
+.jam-row{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.jam-check{accent-color:var(--gold);width:14px;height:14px;cursor:pointer;}
+.jam-label{font-size:.75rem;color:var(--text2);font-family:'Share Tech Mono';cursor:pointer;}
+.jam-input{width:105px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.25);color:var(--text);font-family:'Share Tech Mono';font-size:.83rem;padding:5px 9px;border-radius:6px;outline:none;}
+.jam-input:focus{border-color:var(--gold);}
+.add-row{display:flex;gap:7px;margin-top:9px;}
+.add-input{flex:1;background:rgba(0,200,224,0.05);border:1px solid var(--border2);color:var(--text);font-family:'Barlow';font-size:.85rem;padding:7px 11px;border-radius:6px;outline:none;}
+.add-input:focus{border-color:var(--cyan);}
+.add-btn{background:rgba(0,200,224,0.1);border:1px solid var(--cyan);color:var(--cyan);font-family:'Rajdhani';font-size:.83rem;font-weight:600;padding:7px 14px;border-radius:6px;cursor:pointer;letter-spacing:1px;white-space:nowrap;}
+.add-btn:hover{background:var(--cyan);color:#0a1628;}
+.rekom-input{width:100%;background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.2);color:var(--text);font-family:'Barlow';font-size:.87rem;padding:8px 13px;border-radius:7px;outline:none;resize:vertical;min-height:48px;}
+.rekom-input:focus{border-color:var(--gold);}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:2px 0 14px;}
+.pekerjaan-block{background:rgba(10,22,40,0.65);border:1px solid var(--border2);border-radius:8px;padding:13px;margin-bottom:10px;}
+.pek-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.pek-project{font-family:'Rajdhani';font-size:.88rem;font-weight:700;color:var(--gold2);letter-spacing:1px;}
+.pek-alat{font-family:'Share Tech Mono';font-size:.72rem;color:var(--cyan);background:rgba(0,200,224,0.1);border:1px solid var(--border2);padding:2px 9px;border-radius:10px;}
+.del-block{background:none;border:none;color:rgba(255,68,68,0.4);cursor:pointer;font-size:.88rem;padding:2px 6px;border-radius:4px;margin-left:auto;}
+.del-block:hover{color:var(--red);background:rgba(255,68,68,0.1);}
+.item-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+.item-row{display:flex;gap:6px;align-items:flex-start;}
+.item-num{font-family:'Share Tech Mono';font-size:.73rem;color:var(--text2);padding-top:9px;min-width:16px;}
+.item-inputs{flex:1;display:flex;flex-direction:column;gap:4px;}
+.item-pekerjaan{width:100%;background:rgba(245,166,35,0.04);border:1px solid rgba(245,166,35,0.2);color:var(--text);font-family:'Barlow';font-size:.84rem;padding:6px 10px;border-radius:6px;outline:none;}
+.item-pekerjaan:focus{border-color:var(--gold);}
+.item-lokasi{width:100%;background:rgba(0,200,224,0.04);border:1px solid var(--border2);color:var(--text2);font-family:'Share Tech Mono';font-size:.72rem;padding:5px 9px;border-radius:6px;outline:none;}
+.item-lokasi::placeholder{color:rgba(138,168,204,0.35);}
+.item-lokasi:focus{border-color:var(--cyan);}
+.del-item{background:none;border:none;color:rgba(255,68,68,0.3);cursor:pointer;font-size:.83rem;padding:6px 3px;}
+.del-item:hover{color:var(--red);}
+.add-item-btn{width:100%;background:rgba(245,166,35,0.07);border:1px dashed rgba(245,166,35,0.28);color:var(--gold);font-family:'Rajdhani';font-size:.78rem;font-weight:600;padding:5px;border-radius:6px;cursor:pointer;letter-spacing:.5px;}
+.add-item-btn:hover{background:rgba(245,166,35,0.15);}
+.add-pek-section{margin-top:2px;}
+.add-pek-title{font-size:.75rem;color:var(--text2);font-family:'Share Tech Mono';margin-bottom:7px;}
+.add-pek-row{display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+.pek-sel,.alat-sel{background:rgba(10,22,40,0.85);border:1px solid var(--border);color:var(--text);font-family:'Barlow';font-size:.84rem;padding:7px 10px;border-radius:6px;outline:none;cursor:pointer;flex:1;min-width:110px;}
+.pek-sel:focus{border-color:var(--gold);}
+.alat-sel:focus{border-color:var(--cyan);}
+.add-pek-btn{background:linear-gradient(135deg,var(--ocean),var(--gold));color:#0a1628;font-family:'Rajdhani';font-size:.85rem;font-weight:700;padding:7px 16px;border-radius:6px;cursor:pointer;border:none;letter-spacing:1px;white-space:nowrap;}
+.add-pek-btn:hover{opacity:.88;}
+.preview-box{background:rgba(0,15,5,0.75);border:1px solid rgba(0,230,118,0.22);border-radius:8px;padding:15px;font-family:'Share Tech Mono';font-size:.82rem;color:#b2dfdb;white-space:pre-wrap;line-height:1.75;max-height:440px;overflow-y:auto;}
+.preview-box::-webkit-scrollbar{width:4px;}
+.preview-box::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px;}
+.copy-btn{display:block;width:100%;margin-top:11px;background:linear-gradient(135deg,#1b5e20,#00e676);color:#0a1628;font-family:'Rajdhani';font-size:1rem;font-weight:700;padding:11px;border:none;border-radius:8px;cursor:pointer;letter-spacing:2px;box-shadow:0 4px 18px rgba(0,230,118,0.2);}
+.copy-btn:hover{box-shadow:0 6px 28px rgba(0,230,118,0.4);}
+.reset-btn{display:block;width:100%;margin-top:7px;background:rgba(255,68,68,0.07);border:1px solid rgba(255,68,68,0.28);color:rgba(255,100,100,0.75);font-family:'Rajdhani';font-size:.84rem;font-weight:600;padding:8px;border-radius:8px;cursor:pointer;letter-spacing:1px;}
+.reset-btn:hover{background:rgba(255,68,68,0.14);color:var(--red);}
+.wa-share-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:9px;background:linear-gradient(135deg,#075e54,#25d366);color:#fff;font-family:'Rajdhani';font-size:1rem;font-weight:700;padding:12px;border:none;border-radius:8px;cursor:pointer;letter-spacing:1px;box-shadow:0 4px 18px rgba(37,211,102,0.25);}
+.wa-share-btn:hover{box-shadow:0 6px 28px rgba(37,211,102,0.45);opacity:.93;}
+#toast{position:fixed;bottom:26px;right:18px;z-index:999;background:linear-gradient(135deg,#1b5e20,#00e676);color:#0a1628;font-family:'Rajdhani';font-weight:700;font-size:.93rem;letter-spacing:1px;padding:10px 20px;border-radius:10px;box-shadow:0 4px 22px rgba(0,230,118,0.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+         
 </style>
 </head>
 <body>
@@ -441,84 +551,112 @@ input[readonly] { background: var(--gray-50); color: var(--gray-500); }
 
     <!-- ══ REQUEST ALAT BERAT ══ -->
     <div class="page" id="page-he">
-      <div class="page-header">
-        <h2>🏗️ Request Alat Berat</h2>
-        <p>PT. Sumber Hayati Mandiri</p>
-      </div>
+      <div class="header">
+  <div class="header-icon">🏗️</div>
+  <div>
+    <h1>REQUEST HEAVY EQUIPMENT</h1>
+    <div class="header-sub">PT. SUMBER HAYATI MANDIRI</div>
+  </div>
+</div>
 
-      <div class="section">
-        <div class="form-group">
-          <label class="field-label">Tanggal</label>
-          <input type="date" id="he-tgl"/>
-        </div>
-        <div class="form-group">
-          <label class="field-label">Subkontraktor</label>
-          <input type="text" id="he-subkon" placeholder="Nama subkontraktor"/>
-        </div>
+<div class="container">
 
-        <div class="form-group">
-          <label class="field-label">Project</label>
-          <div class="tag-row" id="he-project-tags">
-            <span class="tag" onclick="heToggleTag(this,'project')">BATOK</span>
-            <span class="tag" onclick="heToggleTag(this,'project')">PPSDM</span>
-            <span class="tag" onclick="heToggleTag(this,'project')">BSB</span>
-            <span class="tag" onclick="heToggleTag(this,'project')">BONTANG</span>
-          </div>
-          <div class="add-row" style="margin-top:8px;">
-            <input type="text" id="he-project-input" placeholder="Project lain..."/>
-            <button onclick="heAddTag('project')">+ Tambah</button>
-          </div>
-        </div>
+  <div class="card">
+    <div class="sec-header">
+      <div class="sec-title">📋 Form Request</div>
+      <div class="sec-line"></div>
+    </div>
 
-        <div class="form-group">
-          <label class="field-label">Waktu</label>
-          <div class="waktu-row">
-            <button class="waktu-btn" onclick="heToggleWaktu(this,'PAGI')">🌅 PAGI</button>
-            <button class="waktu-btn" onclick="heToggleWaktu(this,'SIANG')">☀️ SIANG</button>
-            <button class="waktu-btn" onclick="heToggleWaktu(this,'MALAM')">🌙 MALAM</button>
-          </div>
-          <input type="text" id="he-jam" placeholder="Jam opsional (mis: 08.00)" style="margin-top:8px;"/>
-        </div>
+    <!-- TANGGAL -->
+    <div class="field">
+      <label>TANGGAL</label>
+      <input type="date" class="field-input" id="tanggal" oninput="renderPreview()">
+    </div>
 
-        <div class="form-group">
-          <label class="field-label">Alat Berat</label>
-          <div class="tag-row" id="he-alat-tags">
-            <span class="tag" onclick="heToggleTag(this,'alat')">Crane</span>
-            <span class="tag" onclick="heToggleTag(this,'alat')">Excavator</span>
-            <span class="tag" onclick="heToggleTag(this,'alat')">Forklift</span>
-            <span class="tag" onclick="heToggleTag(this,'alat')">Truck</span>
-            <span class="tag" onclick="heToggleTag(this,'alat')">Trailer</span>
-          </div>
-          <div class="add-row" style="margin-top:8px;">
-            <input type="text" id="he-alat-input" placeholder="Alat lain..."/>
-            <button onclick="heAddTag('alat')">+ Tambah</button>
-          </div>
-        </div>
+    <!-- SUBKONTRAKTOR -->
+    <div class="field">
+      <label>SUBKONTRAKTOR</label>
+      <input type="text" class="field-input" id="subkon" value="PT. SHM" readonly>
+    </div>
 
-        <div class="form-group">
-          <label class="field-label">Rekomendasi Unit <span style="font-weight:400;color:var(--gray-400,#9ca3af);text-transform:none">(opsional)</span></label>
-          <input type="text" id="he-rekomendasi" placeholder="Mis: Unit 03"/>
-        </div>
-
-        <hr class="divider"/>
-
-        <div class="form-group">
-          <label class="field-label">Pekerjaan <span style="font-weight:400;color:var(--gray-400);text-transform:none">(project + alat per blok)</span></label>
-          <div id="he-blok-container"></div>
-          <button class="btn btn-ghost" onclick="heAddBlok()" style="margin-top:4px;font-size:13px;padding:10px;">+ Tambah Blok Pekerjaan</button>
-        </div>
-
-        <button class="btn btn-orange" onclick="heGenerate()" style="margin-bottom:10px;">📲 Generate Preview WA</button>
-        <button class="btn btn-ghost" onclick="heReset()">🗑 Reset Form</button>
-      </div>
-
-      <div class="wa-preview" id="he-result">
-        <div class="wa-label">Preview WhatsApp</div>
-        <pre id="he-output"></pre>
-        <button class="btn btn-green" onclick="heCopy()" style="margin-top:10px;">📋 Salin</button>
-        <button class="btn btn-ghost" onclick="heSendWA()" style="margin-top:8px;">📱 Kirim ke WA</button>
+    <!-- PROJECT -->
+    <div class="field">
+      <label>PROJECT <span style="color:var(--text2);font-size:.68rem;">(pilih satu atau lebih)</span></label>
+      <div class="btn-group" id="projectGroup"></div>
+      <div class="add-row">
+        <input type="text" class="add-input" id="newProject" placeholder="Tambah project baru...">
+        <button class="add-btn" onclick="addProject()">+ Tambah</button>
       </div>
     </div>
+
+    <!-- WAKTU -->
+    <div class="field">
+      <label>WAKTU</label>
+      <div class="btn-group">
+        <button class="waktu-btn active" id="wPagi"  onclick="setWaktu('PAGI')">🌅 PAGI</button>
+        <button class="waktu-btn"        id="wSiang" onclick="setWaktu('SIANG')">☀️ SIANG</button>
+        <button class="waktu-btn"        id="wMalam" onclick="setWaktu('MALAM')">🌙 MALAM</button>
+      </div>
+      <div class="jam-row">
+        <input type="checkbox" class="jam-check" id="jamCheck" onchange="toggleJam()">
+        <label class="jam-label" for="jamCheck">Tambahkan jam (opsional)</label>
+        <input type="time" class="jam-input" id="jamInput" style="display:none;" oninput="renderPreview()">
+      </div>
+    </div>
+
+    <!-- ALAT BERAT -->
+    <div class="field">
+      <label>ALAT BERAT <span style="color:var(--text2);font-size:.68rem;">(pilih satu atau lebih)</span></label>
+      <div class="btn-group" id="alatGroup"></div>
+      <div class="add-row">
+        <input type="text" class="add-input" id="newAlat" placeholder="Tambah alat baru...">
+        <button class="add-btn" onclick="addAlat()">+ Tambah</button>
+      </div>
+    </div>
+
+    <!-- REKOMENDASI UNIT -->
+    <div class="field">
+      <label>REKOMENDASI UNIT <span style="color:var(--text2);font-size:.68rem;">(opsional)</span></label>
+      <textarea class="rekom-input" id="rekomendasiUnit" placeholder="Contoh: Unit no. 3, crane 50 ton..." oninput="renderPreview()" rows="2"></textarea>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PEKERJAAN -->
+    <div class="sec-header" style="margin-bottom:10px;">
+      <div class="sec-title" style="font-size:.88rem;">📝 Pekerjaan</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div id="pekerjaanBlocks"></div>
+
+    <div class="add-pek-section">
+      <div class="add-pek-title">Tambah blok pekerjaan (project + alat):</div>
+      <div class="add-pek-row">
+        <select class="pek-sel" id="selProject"><option value="">-- Project --</option></select>
+        <select class="alat-sel" id="selAlat"><option value="">-- Alat --</option></select>
+        <button class="add-pek-btn" onclick="addPekerjaanBlock()">+ Blok</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="card">
+    <div class="sec-header">
+      <div class="sec-title">📲 Preview WA</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="preview-box" id="previewBox">Isi form di atas untuk melihat preview...</div>
+    <button class="copy-btn" onclick="copyWa()">📋 SALIN KE CLIPBOARD</button>
+    <button class="wa-share-btn" onclick="shareToWa()">
+      <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      KIRIM KE GRUP WA
+    </button>
+    <button class="reset-btn" onclick="resetForm()">🗑 RESET FORM</button>
+  </div>
+
+</div>
+<div id="toast"></div>
 
     <!-- ══ SERI TABUNG ══ -->
     <div class="page" id="page-seri">
@@ -685,109 +823,306 @@ window.addEventListener('load', () => {
 // ═══════════════════════════════════════
 // REQUEST ALAT BERAT
 // ═══════════════════════════════════════
-let heWaktu = '';
-let heBloks = [];
+const HARI_ID = ['MINGGU','SENIN','SELASA','RABU','KAMIS','JUMAT','SABTU'];
 
-function heToggleTag(el, group) {
-  el.classList.toggle('selected');
+let projects    = JSON.parse(localStorage.getItem('rhe_projects') || '["BG.MBP 4005","SPOB.BAHTERA 02","LCT. BANTU"]');
+let alatList    = JSON.parse(localStorage.getItem('rhe_alat')     || '["CRANE","FORKLIFT","DUMPTRUCK","SKID STEER LOADER","EXCAVATOR","CRANE TRUCK"]');
+let selProjects = JSON.parse(localStorage.getItem('rhe_selProj')  || '[]');
+let selAlat     = JSON.parse(localStorage.getItem('rhe_selAlat')  || '[]');
+let waktu       = 'PAGI';
+let pekerjaanBlocks = [];
+
+function init() {
+  const today = new Date();
+  document.getElementById('tanggal').value = formatDate(today);
+  renderProjectButtons();
+  renderAlatButtons();
+  updateSelects();
+  renderPekerjaanBlocks();
+  renderPreview();
 }
-function heToggleWaktu(el, w) {
-  document.querySelectorAll('.waktu-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  heWaktu = w;
+
+function formatDate(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
-function heAddTag(group) {
-  const inp = document.getElementById('he-' + group + '-input');
-  const val = inp.value.trim();
+function formatDateDisplay(ds) {
+  if (!ds) return '—';
+  const d = new Date(ds+'T00:00:00');
+  return `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+}
+function getHari(ds) {
+  if (!ds) return '—';
+  return HARI_ID[new Date(ds+'T00:00:00').getDay()];
+}
+
+// --- PROJECTS ---
+function renderProjectButtons() {
+  const g = document.getElementById('projectGroup');
+  g.innerHTML = '';
+  projects.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'tog-btn' + (selProjects.includes(p) ? ' active' : '');
+    b.textContent = p;
+    b.onclick = () => toggleProject(p);
+    g.appendChild(b);
+  });
+  updateSelects(); renderPreview();
+}
+function toggleProject(p) {
+  const i = selProjects.indexOf(p);
+  if (i > -1) selProjects.splice(i, 1); else selProjects.push(p);
+  localStorage.setItem('rhe_selProj', JSON.stringify(selProjects));
+  renderProjectButtons();
+}
+function addProject() {
+  const inp = document.getElementById('newProject');
+  const val = inp.value.trim().toUpperCase();
   if (!val) return;
-  const container = document.getElementById('he-' + group + '-tags');
-  const tag = document.createElement('span');
-  tag.className = 'tag selected';
-  tag.textContent = val;
-  tag.onclick = () => tag.classList.toggle('selected');
-  container.appendChild(tag);
+  if (projects.includes(val)) { showToast('⚠️ Project sudah ada'); return; }
+  projects.push(val);
+  localStorage.setItem('rhe_projects', JSON.stringify(projects));
   inp.value = '';
+  renderProjectButtons();
 }
-function heAddBlok() {
-  const id = Date.now();
-  const div = document.createElement('div');
-  div.className = 'blok-card';
-  div.id = 'blok-' + id;
-  div.innerHTML = `
-    <button class="blok-del" onclick="document.getElementById('blok-${id}').remove()">✕</button>
-    <div class="form-group">
-      <label class="field-label">Project</label>
-      <input type="text" placeholder="Nama project" class="blok-project"/>
-    </div>
-    <div class="form-group" style="margin-bottom:0">
-      <label class="field-label">Alat</label>
-      <input type="text" placeholder="Nama alat" class="blok-alat"/>
-    </div>`;
-  document.getElementById('he-blok-container').appendChild(div);
+
+// --- ALAT ---
+function renderAlatButtons() {
+  const g = document.getElementById('alatGroup');
+  g.innerHTML = '';
+  alatList.forEach(a => {
+    const b = document.createElement('button');
+    b.className = 'tog-btn' + (selAlat.includes(a) ? ' active' : '');
+    b.textContent = a;
+    b.onclick = () => toggleAlat(a);
+    g.appendChild(b);
+  });
+  updateSelects(); renderPreview();
 }
-function heGetSelected(group) {
-  return [...document.querySelectorAll('#he-' + group + '-tags .tag.selected')].map(t => t.textContent.trim());
+function toggleAlat(a) {
+  const i = selAlat.indexOf(a);
+  if (i > -1) selAlat.splice(i, 1); else selAlat.push(a);
+  localStorage.setItem('rhe_selAlat', JSON.stringify(selAlat));
+  renderAlatButtons();
 }
-function heGenerate() {
-  const tgl     = document.getElementById('he-tgl').value;
-  const subkon  = document.getElementById('he-subkon').value.trim();
-  const projects = heGetSelected('project');
-  const alats   = heGetSelected('alat');
-  const jam     = document.getElementById('he-jam').value.trim();
-  const rekomend= document.getElementById('he-rekomendasi').value.trim();
+function addAlat() {
+  const inp = document.getElementById('newAlat');
+  const val = inp.value.trim().toUpperCase();
+  if (!val) return;
+  if (alatList.includes(val)) { showToast('⚠️ Alat sudah ada'); return; }
+  alatList.push(val);
+  localStorage.setItem('rhe_alat', JSON.stringify(alatList));
+  inp.value = '';
+  renderAlatButtons();
+}
 
-  let tglStr = tgl ? new Date(tgl).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).toUpperCase() : '–';
-  let waktuStr = heWaktu ? heWaktu : '–';
-  if (jam) waktuStr += ' (' + jam + ')';
+// --- WAKTU ---
+function setWaktu(w) {
+  waktu = w;
+  document.getElementById('wPagi').classList.toggle('active',  w==='PAGI');
+  document.getElementById('wSiang').classList.toggle('active', w==='SIANG');
+  document.getElementById('wMalam').classList.toggle('active', w==='MALAM');
+  renderPreview();
+}
+function toggleJam() {
+  const show = document.getElementById('jamCheck').checked;
+  document.getElementById('jamInput').style.display = show ? 'inline-block' : 'none';
+  renderPreview();
+}
 
-  let out = `*REQUEST ALAT BERAT*\n`;
-  out += `PT. SUMBER HAYATI MANDIRI\n\n`;
-  out += `📅 Tanggal   : ${tglStr}\n`;
-  out += `🏢 Subkon    : ${subkon || '–'}\n`;
-  out += `📌 Project   : ${projects.length ? projects.join(', ') : '–'}\n`;
-  out += `⏰ Waktu     : ${waktuStr}\n`;
-  out += `🚜 Alat Berat: ${alats.length ? alats.join(', ') : '–'}\n`;
-  if (rekomend) out += `🔖 Rekomendasi: ${rekomend}\n`;
+// --- SELECTS ---
+function updateSelects() {
+  const sp = document.getElementById('selProject');
+  const sa = document.getElementById('selAlat');
+  const pv = sp.value, av = sa.value;
+  sp.innerHTML = '<option value="">-- Project --</option>';
+  projects.forEach(p => { const o = document.createElement('option'); o.value=p; o.textContent=p; sp.appendChild(o); });
+  sa.innerHTML = '<option value="">-- Alat --</option>';
+  alatList.forEach(a => { const o = document.createElement('option'); o.value=a; o.textContent=a; sa.appendChild(o); });
+  if (pv) sp.value = pv;
+  if (av) sa.value = av;
+}
 
-  const bloks = document.querySelectorAll('.blok-card');
-  if (bloks.length > 0) {
-    out += `\n📝 *Pekerjaan:*\n`;
-    bloks.forEach((b, i) => {
-      const p = b.querySelector('.blok-project')?.value.trim() || '–';
-      const a = b.querySelector('.blok-alat')?.value.trim() || '–';
-      out += `${i+1}. ${p} — ${a}\n`;
+// --- PEKERJAAN BLOCKS ---
+function addPekerjaanBlock() {
+  const proj = document.getElementById('selProject').value;
+  const alat = document.getElementById('selAlat').value;
+  if (!proj || !alat) { showToast('⚠️ Pilih project dan alat'); return; }
+  pekerjaanBlocks.push({ project: proj, alat: alat, items: [{ pekerjaan:'', lokasi:'' }] });
+  renderPekerjaanBlocks();
+}
+function addItem(bi) {
+  pekerjaanBlocks[bi].items.push({ pekerjaan:'', lokasi:'' });
+  renderPekerjaanBlocks();
+}
+function deleteItem(bi, ii) {
+  pekerjaanBlocks[bi].items.splice(ii, 1);
+  if (!pekerjaanBlocks[bi].items.length) pekerjaanBlocks[bi].items.push({ pekerjaan:'', lokasi:'' });
+  renderPekerjaanBlocks();
+}
+function deleteBlock(bi) {
+  pekerjaanBlocks.splice(bi, 1);
+  renderPekerjaanBlocks();
+}
+function updateItem(bi, ii, field, val) {
+  pekerjaanBlocks[bi].items[ii][field] = val;
+  renderPreview();
+}
+
+function renderPekerjaanBlocks() {
+  const c = document.getElementById('pekerjaanBlocks');
+  c.innerHTML = '';
+  pekerjaanBlocks.forEach((block, bi) => {
+    const div = document.createElement('div');
+    div.className = 'pekerjaan-block';
+    let itemsHtml = '';
+    block.items.forEach((item, ii) => {
+      itemsHtml += `
+        <div class="item-row">
+          <span class="item-num">${ii+1}.</span>
+          <div class="item-inputs">
+            <input type="text" class="item-pekerjaan" placeholder="Nama pekerjaan..."
+              value="${escHtml(item.pekerjaan)}"
+              oninput="updateItem(${bi},${ii},'pekerjaan',this.value)">
+            <input type="text" class="item-lokasi" placeholder="📍 Lokasi (contoh: kiri belakang → maindeck)"
+              value="${escHtml(item.lokasi)}"
+              oninput="updateItem(${bi},${ii},'lokasi',this.value)">
+          </div>
+          <button class="del-item" onclick="deleteItem(${bi},${ii})">✕</button>
+        </div>`;
+    });
+    div.innerHTML = `
+      <div class="pek-header">
+        <span class="pek-project">📦 ${block.project}</span>
+        <span class="pek-alat">🔧 ${block.alat}</span>
+        <button class="del-block" onclick="deleteBlock(${bi})">✕</button>
+      </div>
+      <div class="item-list">${itemsHtml}</div>
+      <button class="add-item-btn" onclick="addItem(${bi})">+ Tambah Item Pekerjaan</button>
+    `;
+    c.appendChild(div);
+  });
+  renderPreview();
+}
+
+// --- PREVIEW ---
+function renderPreview() {
+  const ds       = document.getElementById('tanggal').value;
+  const rekom    = (document.getElementById('rekomendasiUnit')?.value || '').trim();
+  const jamCheck = document.getElementById('jamCheck').checked;
+  const jamVal   = document.getElementById('jamInput').value;
+
+  let waktuText = waktu;
+  if (jamCheck && jamVal) waktuText += ` (${jamVal} WIB)`;
+
+  const projText = selProjects.length ? selProjects.join(', ') : '—';
+  const alatText = selAlat.length ? selAlat.join(' & ') : '—';
+
+  let out = '';
+  out += `📋 *REQUEST HEAVY EQUIPMENT*\n\n`;
+  out += `Tanggal : *${formatDateDisplay(ds)}*\n`;
+  out += `Hari: *${getHari(ds)}*\n`;
+  out += `Subkontraktor : *PT. SHM*\n`;
+  out += `Project : *${projText}*\n`;
+  out += `Waktu : *${waktuText}*\n`;
+  out += `Alat Berat : *${alatText}*\n`;
+  if (rekom) out += `Rekomendasi unit: *${rekom}*\n`;
+
+  if (pekerjaanBlocks.length > 0) {
+    out += `\nPekerjaan:\n`;
+    const grouped = {};
+    pekerjaanBlocks.forEach(b => {
+      if (!grouped[b.project]) grouped[b.project] = [];
+      grouped[b.project].push(b);
+    });
+    Object.entries(grouped).forEach(([proj, blocks]) => {
+      out += `\n*\`${proj}\`*\n`;
+      blocks.forEach(block => {
+        out += `\n*${block.alat}*\n`;
+        block.items.forEach((item, i) => {
+          const pek = item.pekerjaan || '...';
+          out += `${i+1}. ${pek}\n`;
+          if (item.lokasi) out += `📍 ${item.lokasi}\n`;
+        });
+      });
     });
   }
 
-  document.getElementById('he-output').textContent = out;
-  const res = document.getElementById('he-result');
-  res.style.display = 'block';
-  res.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  document.getElementById('previewBox').textContent = out.trim();
 }
-function heCopy() {
-  const t = document.getElementById('he-output').textContent;
-  navigator.clipboard.writeText(t).then(() => {
-    const b = document.querySelector('#he-result .btn-green');
-    b.textContent = '✅ Tersalin!';
-    setTimeout(() => b.textContent = '📋 Salin', 2000);
-  });
+
+// --- COPY ---
+function copyWa() {
+  const text = document.getElementById('previewBox').textContent;
+  if (!text || text.startsWith('Isi form')) { showToast('⚠️ Form masih kosong'); return; }
+  navigator.clipboard.writeText(text)
+    .then(() => showToast('✅ Berhasil disalin!'))
+    .catch(() => {
+      const el = document.getElementById('previewBox');
+      const r = document.createRange(); r.selectNode(el);
+      window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      showToast('✅ Disalin!');
+    });
 }
-function heSendWA() {
-  const t = encodeURIComponent(document.getElementById('he-output').textContent);
-  window.open('https://wa.me/?text=' + t, '_blank');
+
+// --- SHARE TO WA ---
+function shareToWa() {
+  const text = document.getElementById('previewBox').textContent;
+  if (!text || text.startsWith('Isi form')) { showToast('⚠️ Form masih kosong'); return; }
+
+  // Coba Web Share API dulu (HP/mobile — paling bagus, bisa pilih share ke grup WA langsung)
+  if (navigator.share) {
+    navigator.share({ text: text })
+      .then(() => showToast('✅ Berhasil dibagikan!'))
+      .catch(() => {});
+    return;
+  }
+
+  // Fallback: copy teks lalu buka grup WA
+  const GROUP_LINK = 'https://chat.whatsapp.com/Jp8xsOE2p3O0jUpPLgWEj3';
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      showToast('✅ Teks disalin! Silakan paste di grup.');
+      setTimeout(() => { window.open(GROUP_LINK, '_blank'); }, 800);
+    })
+    .catch(() => {
+      // Fallback manual select
+      const el = document.getElementById('previewBox');
+      const r = document.createRange(); r.selectNode(el);
+      window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      showToast('✅ Teks disalin! Silakan paste di grup.');
+      setTimeout(() => { window.open(GROUP_LINK, '_blank'); }, 800);
+    });
 }
-function heReset() {
-  if (!confirm('Reset semua data?')) return;
-  document.getElementById('he-tgl').value = '';
-  document.getElementById('he-subkon').value = '';
-  document.getElementById('he-jam').value = '';
-  document.getElementById('he-rekomendasi').value = '';
-  document.querySelectorAll('#he-project-tags .tag, #he-alat-tags .tag').forEach(t => t.classList.remove('selected'));
-  document.querySelectorAll('.waktu-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('he-blok-container').innerHTML = '';
-  document.getElementById('he-result').style.display = 'none';
-  heWaktu = '';
+
+// --- RESET ---
+function resetForm() {
+  if (!confirm('Reset semua isi form?')) return;
+  selProjects = []; selAlat = []; waktu = 'PAGI'; pekerjaanBlocks = [];
+  localStorage.setItem('rhe_selProj', '[]');
+  localStorage.setItem('rhe_selAlat', '[]');
+  document.getElementById('tanggal').value = formatDate(new Date());
+  document.getElementById('rekomendasiUnit').value = '';
+  document.getElementById('jamCheck').checked = false;
+  document.getElementById('jamInput').style.display = 'none';
+  setWaktu('PAGI');
+  renderProjectButtons();
+  renderAlatButtons();
+  renderPekerjaanBlocks();
 }
+
+// --- UTILS ---
+function escHtml(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(() => { t.style.opacity = '0'; }, 2300);
+}
+
+init();
 
 // ═══════════════════════════════════════
 // SERI TABUNG
